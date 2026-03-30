@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  min-height: 850px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header-timer {
+  display: flex;
+  justify-content: center;
+}
+
+.header-timer h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+/* Header END*/
+
+/* Start */
+.time-form {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: black;
+  height: 200px;
+  margin-top: 150px;
+}
+
+.hr,
+.min,
+.sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-form label {
+  font-size: 1rem;
+  text-transform: lowercase;
+  opacity: 0.6;
+  font-weight: 300;
+}
+
+.time-form input {
+  font-weight: 200;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  font-size: 4rem;
+  background: transparent;
+  border: none;
+  color: white;
+  border-bottom: 1px solid #373737;
+  outline: none;
+  padding: 0;
+}
+
+.time-actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.btn-reset,
+.btn-start {
+  border: none;
+  border-radius: 999px;
+  width: 122px;
+  height: 33px;
+  font-size: 0.875rem;
+  font-weight: 300;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-reset {
+  background-color: #3a3a3a;
+}
+
+.btn-start {
+  background-color: #34c759;
+}
+
+.btn-reset:hover {
+  background-color: #48484a;
+}
+
+.btn-start:hover {
+  background-color: #30b854;
+}
+
+/* Start END*/
