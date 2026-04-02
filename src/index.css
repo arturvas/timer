@@ -87,7 +87,8 @@ body {
 }
 
 .btn-reset,
-.btn-start {
+.btn-start,
+.btn-pause {
   border: none;
   border-radius: 999px;
   width: 122px;
@@ -106,6 +107,10 @@ body {
   background-color: #34c759;
 }
 
+.btn-pause {
+  background-color: #FF8D28;
+}
+
 .btn-reset:hover {
   background-color: #48484a;
 }
@@ -114,4 +119,49 @@ body {
   background-color: #30b854;
 }
 
-/* Start END*/
+/* Start END */
+
+/* Timer START */
+.recents-title {
+  margin-top: 50px;
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+
+div .line-bot, .line-top {
+  opacity: 0.1;
+  border: 0.5px white solid;
+}
+
+.line-top {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.line-bot {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 200;
+  height: 58px;
+  text-align: center;
+  font-size: 3rem;
+  border: none;
+  color: white;
+  outline: none;
+  padding: 0;
+}
+
+.time-description {
+  display: flex;
+  color: white;
+  opacity: 0.5;
+  font-weight: 300;
+}
+
+/* Timer END */
