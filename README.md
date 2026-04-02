@@ -1,9 +1,18 @@
-## Timer
+# Projeto Timer
 
-I will build a timer in React.
+Timer em React.js
 
-What it's supposed to do:
+## Objetivo
+Objettivo é a pratica dos hooks:
+- `useState`
+- `useEffect`
 
-- [ ] It should receive an input (number that represents seconds)
-- [ ] Decrease the number until it goes to zero
-- [ ] Have a Reset button
+## Atualmente
+- **O que já foi feito:** Uso de `useState` para gerenciamento de estado dos componentes.
+- **O que falta:** Implementar a lógica do timer que creio eu é com o `useEffect` (ainda não iniciado).
+
+## Funcionalidades Planejadas
+- [X] Receber um input (número que representa segundos).
+- [ ] Decrementar o número progressivamente até chegar a zero.
+- [ ] Botão de Reset para reiniciar a contagem.
+- [ ] Guardar em memoria os timers recentes (nem sei como)
