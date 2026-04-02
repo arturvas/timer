@@ -1,12 +1,18 @@
 import { useState } from 'react';
 
-function Start(props) {
-  const [hours, setHours] = useState(props.hr);
-  const [minutes, setMinutes] = useState(props.min);
-  const [seconds, setSeconds] = useState(props.sec);
+function Start({ startTimer }) {
+  const [hours, setHours] = useState('00');
+  const [minutes, setMinutes] = useState('00');
+  const [seconds, setSeconds] = useState('00');
+
+  function handleStartTimer() {
+    const total = hours * 3600 + minutes * 60 + seconds;
+    startTimer(total);
+  }
 
   function handleChange(e, setter, max) {
     let value = e.target.value;
+
     value = value.replace(/\D/g, '');
     value = value.slice(0, 2);
 
@@ -16,10 +22,12 @@ function Start(props) {
     setter(value);
   }
 
-  function addLeftZero(e, setter) {
+  function addMissingZero(e, setter) {
     let value = e.target.value;
     if (value.length === 1) {
       value = '0' + value;
+    } else if (value === '' || value === null) {
+      value = '00';
     }
     setter(value);
   }
@@ -34,7 +42,7 @@ function Start(props) {
             id="hr"
             value={hours}
             onChange={(e) => handleChange(e, setHours)}
-            onBlur={(e) => addLeftZero(e, setHours)}
+            onBlur={(e) => addMissingZero(e, setHours)}
           />
         </div>
         <div className="min">
@@ -44,7 +52,7 @@ function Start(props) {
             id="min"
             value={minutes}
             onChange={(e) => handleChange(e, setMinutes, 59)}
-            onBlur={(e) => addLeftZero(e, setMinutes)}
+            onBlur={(e) => addMissingZero(e, setMinutes)}
           />
         </div>
         <div className="sec">
@@ -54,13 +62,15 @@ function Start(props) {
             id="sec"
             value={seconds}
             onChange={(e) => handleChange(e, setSeconds, 59)}
-            onBlur={(e) => addLeftZero(e, setSeconds)}
+            onBlur={(e) => addMissingZero(e, setSeconds)}
           />
         </div>
       </form>
       <div className="time-actions">
         <button className="btn-reset">Reset</button>
-        <button className="btn-start">Start</button>
+        <button className="btn-start" onClick={handleStartTimer}>
+          Start
+        </button>
       </div>
     </section>
   );
