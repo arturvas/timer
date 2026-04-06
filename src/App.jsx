@@ -22,12 +22,15 @@ function App() {
       <div className="container">
         <Header />
         <Start startTimer={addTimer} />
-        {timers.length > 0 && <h2 className={'recents-title'}>Recents</h2>}
-        {timers.map((timer) => (
+        {timers.length > 0 && (
           <>
-            <Timer initialSeconds={timer.initialSeconds} />
+            <h2 className={'recents-title'}>Recents</h2>
+
+            {timers.map((timer, index) => (
+              <Timer key={index} initialSeconds={timer.initialSeconds} />
+            ))}
           </>
-        ))}
+        )}
       </div>
     </>
   );
