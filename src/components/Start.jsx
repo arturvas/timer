@@ -6,7 +6,7 @@ function Start({ startTimer }) {
   const [seconds, setSeconds] = useState('00');
 
   function handleStartTimer() {
-    const total = hours * 3600 + minutes * 60 + seconds;
+    const total = parseInt(hours) * 3600 + parseInt(minutes) * 60 + parseInt(seconds);
     startTimer(total);
   }
 

@@ -128,19 +128,10 @@ body {
   font-size: 1.125rem;
 }
 
-div .line-bot, .line-top {
+.line {
   opacity: 0.1;
-  border: 0.5px white solid;
-}
-
-.line-top {
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-.line-bot {
-  margin-top: 10px;
-  margin-bottom: 50px;
+  border: 0.5px solid white;
+  margin: 10px 0;
 }
 
 .display {
