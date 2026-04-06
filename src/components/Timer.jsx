@@ -14,6 +14,22 @@ function Timer({ initialSeconds }) {
   const formatedTime = `${h}:${m}:${s}`;
   console.log(remainingTime);
 
+  function timeDescriptionLabel() {
+    let h = Math.floor(initialSeconds / 3600);
+    let m = Math.floor((initialSeconds % 3600) / 60);
+    let s = initialSeconds % 60;
+
+    let parts = [];
+
+    if (h > 0) parts.push(`${h}h`);
+    if (m > 0) parts.push(`${m}min`);
+    if (s > 0) parts.push(`${s}sec`);
+
+    if (parts.length === 0) return '';
+    if (parts.length === 1) return parts[0];
+    if (parts.length === 2) return `${parts[0]} and ${parts[1]}`;
+  }
+
   useEffect(() => {
     const interval = setTimeout(() => {
       setRemainingTime(remainingTime - 1);
@@ -25,13 +41,13 @@ function Timer({ initialSeconds }) {
 
   return (
     <section>
-      <div className="line-top" />
+      <div className="line" />
       <div className="display">
         <time>{formatedTime}</time>
         <button className="btn-pause">Pause</button>
       </div>
-      <time className="time-description">5 min</time>
-      <div className="line-bot" />
+      <time className="time-description">{timeDescriptionLabel()}</time>
+      <div className="line" />
     </section>
   );
 }
