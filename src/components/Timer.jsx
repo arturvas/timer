@@ -7,6 +7,9 @@ function Timer({ initialSeconds }) {
 
   function handlePause() {
     setIsRunning(!isRunning);
+    if (isRunning === true) {
+      setRemainingTime(remainingTime);
+    }
   }
 
   function pad(n) {
