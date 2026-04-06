@@ -14,6 +14,7 @@ Objettivo é a pratica dos hooks:
 ## Funcionalidades Planejadas
 - [X] Receber um input (número que representa segundos).
 - [X] Decrementar o número progressivamente até chegar a zero.
+- [X] Adicionar timers numa lista de recentes
 - [ ] Fazer botao pause funcionar 
 - [ ] Botão de Reset para reiniciar a contagem.
-- [ ] fazr a tag time em Timer, time-description, escrever o valor original do timer.  
+- [X] fazr a tag time em Timer, time-description, escrever o valor original do timer.  
