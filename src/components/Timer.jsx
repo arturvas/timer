@@ -1,7 +1,13 @@
+import { Play, Pause } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 function Timer({ initialSeconds }) {
   const [remainingTime, setRemainingTime] = useState(initialSeconds);
+  const [isRunning, setIsRunning] = useState(true);
+
+  function handlePause() {
+    setIsRunning(!isRunning);
+  }
 
   function pad(n) {
     return n.toString().padStart(2, '0');
@@ -31,20 +37,23 @@ function Timer({ initialSeconds }) {
   }
 
   useEffect(() => {
-    const interval = setTimeout(() => {
-      setRemainingTime(remainingTime - 1);
+    if (remainingTime === 0 || isRunning === false) return;
+
+    const timeOut = setTimeout(() => {
+      setRemainingTime((prevState) => prevState - 1);
     }, 1000);
-    if (remainingTime === 0) {
-      clearTimeout(interval);
-    }
-  }, [remainingTime]);
+
+    return () => clearTimeout(timeOut);
+  }, [remainingTime, isRunning]);
 
   return (
     <section>
       <div className="line" />
       <div className="display">
         <time>{formatedTime}</time>
-        <button className="btn-pause">Pause</button>
+        <button className={isRunning ? 'btn-pause' : 'btn-start'} onClick={handlePause}>
+          {isRunning ? <Pause size={16} strokeWidth={2} /> : <Play size={16} strokeWidth={2} />}
+        </button>
       </div>
       <time className="time-description">{timeDescriptionLabel()}</time>
       <div className="line" />
