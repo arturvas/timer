@@ -89,6 +89,10 @@ body {
 .btn-reset,
 .btn-start,
 .btn-pause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   border: none;
   border-radius: 999px;
   width: 122px;

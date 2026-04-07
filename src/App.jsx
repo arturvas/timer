@@ -17,11 +17,15 @@ function App() {
     setTimers((prevState) => [...prevState, newTimer]);
   }
 
+  function clearTimer() {
+    setTimers([]);
+  }
+
   return (
     <>
       <div className="container">
         <Header />
-        <Start startTimer={addTimer} />
+        <Start startTimer={addTimer} resetTimer={clearTimer} />
         {timers.length > 0 && (
           <>
             <h2 className={'recents-title'}>Recents</h2>
