@@ -16,10 +16,6 @@ function Start({ startTimer, resetTimer }) {
     setSeconds('00');
   }
 
-  function handleReset() {
-    return resetTimer([]);
-  }
-
   function handleChange(e, setter, max) {
     let value = e.target.value;
 
@@ -77,7 +73,7 @@ function Start({ startTimer, resetTimer }) {
         </div>
       </form>
       <div className="time-actions">
-        <button className="btn-reset" onClick={handleReset}>
+        <button className="btn-reset" onClick={resetTimer}>
           <TimerReset size={18} strokeWidth={2} />
           Reset
         </button>
