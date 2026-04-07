@@ -1,14 +1,23 @@
 import { useState } from 'react';
 import { ClockPlus, TimerReset } from 'lucide-react';
 
-function Start({ startTimer }) {
+function Start({ startTimer, resetTimer }) {
   const [hours, setHours] = useState('00');
   const [minutes, setMinutes] = useState('00');
   const [seconds, setSeconds] = useState('00');
 
   function handleStartTimer() {
     const total = parseInt(hours) * 3600 + parseInt(minutes) * 60 + parseInt(seconds);
+
     startTimer(total);
+
+    setHours('00');
+    setMinutes('00');
+    setSeconds('00');
+  }
+
+  function handleReset() {
+    return resetTimer([]);
   }
 
   function handleChange(e, setter, max) {
@@ -68,7 +77,7 @@ function Start({ startTimer }) {
         </div>
       </form>
       <div className="time-actions">
-        <button className="btn-reset">Reset</button>
+        <button className="btn-reset" onClick={handleReset}>
           <TimerReset size={18} strokeWidth={2} />
           Reset
         </button>
