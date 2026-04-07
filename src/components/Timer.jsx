@@ -55,7 +55,7 @@ function Timer({ initialSeconds }) {
       <div className="display">
         <time>{formatedTime}</time>
         <button className={isRunning ? 'btn-pause' : 'btn-start'} onClick={handlePause}>
-          {isRunning ? <Pause size={16} strokeWidth={2} /> : <Play size={16} strokeWidth={2} />}
+          {isRunning ? <Pause size={18} strokeWidth={2} /> : <Play size={18} strokeWidth={2} />}
         </button>
       </div>
       <time className="time-description">{timeDescriptionLabel()}</time>
